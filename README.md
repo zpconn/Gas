@@ -7,4 +7,4 @@ Gas features a modular material and visual effect system. Materials, specified u
 
 Gas also features a simple scene graph, allowing for easy, powerful, and intuitive composition of transformations.
 
-Several demos are included. GasDemo shows the scene graph, lightning, and water effects in action. GamePrototype is a simple game which also showcases bloom post-processing and dynamic 2D soft shadows.
+Several demos are included. GasDemo shows the scene graph, lighting, and water effects in action. GamePrototype is a simple game which also showcases bloom post-processing and dynamic 2D soft shadows.
