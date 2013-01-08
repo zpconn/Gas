@@ -1,0 +1,18 @@
+// System settings:
+Windowed: True
+DesiredWidth: 1024
+DesiredHeight: 768
+WindowTitle: Gas Demo | By Zach Conn
+LightColor: White
+UseBloom: True
+
+// Bloom parameters:
+BloomScale: 1.5
+Blur: 3
+BrightPassThreshold: 0.6 // This value indicates how bright a pixel must be
+                         // in order to be bloomed.
+                         // Brightness of a color (r,g,b) is defined as:
+                         // (1/3)r + (1/3)g + (1/3)b = (1/3)(r + g + b)
+                         // So BrightPassThreshold should fall in the range [0,1].
+                         // 1 means only purely white pixels are bloomed, 0 means
+                         // everything is bloomed.

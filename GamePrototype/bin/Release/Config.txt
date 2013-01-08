@@ -1,0 +1,62 @@
+// System settings
+
+Windowed: False
+DesiredWidth: 1280
+DesiredHeight: 1024
+WindowTitle: D U E L
+ShowFPS: True
+MainMenuFont: Estrangelo Edessa
+
+// Game settings
+
+ArenaWidth: 1500
+ArenaHeight: 1500
+NumObstacles: 4
+ObstacleRadius: 110
+ObstacleYOffset: 120
+RobotStartHealth: 500
+ProjectileLifetime: 2
+ProjectileSpeed: 550
+ProjectileDamage: 1
+ProjectileFireInterval: 0.3
+ExplodingProjectileTimer: 1
+ExplodingProjectileSpeed: 250
+ExplodingProjectileDamage: 5
+ExplodingProjectileClusterSize: 20
+ExplodingProjectileFireInterval: 5
+
+// Relative: the crosshair moves with the camera
+// Absolute: the crosshair does not move with the camera
+AimMode: Relative
+
+// Fixed: the camera focuses rigidly on the player robot
+// Floating: the camera drifts smoothly in such a way as to keep both robots on screen
+// if possible.
+CameraMode: Floating
+
+// Physics settings
+
+FrictionalCoefficient: 15350
+RobotMoveForceMag: 50000
+RobotMass: 50.0
+CoefficientOfRestitution: 0.2
+PhysicsTimeStep: 0.0    // 0.0334 = 30Hz, 0.0167 = 60Hz, 0.01 = 100Hz, 0.005 = 200Hz
+                        // Set to 0.0 to use display frame rate for physics updates
+
+// AI Settings
+
+TargetingPrecision: 100 // The number of refinements iteratively applied to the original
+                        // impact time estimate. This should be roughly proportional to
+                        // the distances that projectiles are being fired. So the larger is
+                        // the arena, the larger should be this value.
+ExplodingProjectileProbability: 0.05
+
+// Graphics settings
+
+UseBloom: True
+Shadows: True
+BloomBlur: 3.0 // Visual blur is inversely proportional to this value
+BloomScale: 5.0
+BloomBrightPassThreshold: 0.1 // Should be in range [0,1].
+ShadowBlur: 3 // Visual blur is inversely proportional to this value
+LavaTexCoordTiling: 0.8

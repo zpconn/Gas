@@ -1,0 +1,14 @@
+bin\Release\TextureMapping.dll
+bin\Release\TextureMapping.pdb
+bin\Release\Gas.dll
+bin\Release\Gas.pdb
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\TextureMapping.dll
+obj\Release\TextureMapping.pdb
+bin\Debug\TextureMapping.dll
+bin\Debug\TextureMapping.pdb
+bin\Debug\Gas.dll
+bin\Debug\Gas.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\TextureMapping.dll
+obj\Debug\TextureMapping.pdb

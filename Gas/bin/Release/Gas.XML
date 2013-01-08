@@ -1,0 +1,1870 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gas</name>
+    </assembly>
+    <members>
+        <member name="T:Gas.Helpers.EnumHelper">
+            <summary>
+            A utility class to help with dealing with enumerations. It provides functionality
+            for treating enums as if they were collections.
+            </summary>
+        </member>
+        <member name="M:Gas.Helpers.EnumHelper.#ctor">
+            <summary>
+            Private constructor to disallow instantiation.
+            </summary>
+        </member>
+        <member name="M:Gas.Helpers.EnumHelper.GetSize(System.Type)">
+            <summary>
+            Gets the number of elements in an enum.
+            </summary>
+        </member>
+        <member name="M:Gas.Helpers.EnumHelper.GetEnumerator(System.Type)">
+            <summary>
+            Creates an EnumEnumerator for the passed in enum type.
+            </summary>
+        </member>
+        <member name="M:Gas.Helpers.EnumHelper.SearchEnum(System.Type,System.String)">
+            <summary>
+            Searches an enum of type enumType for the element named elementName.
+            </summary>
+            <returns>A System.Object representing the desired enum element.</returns>
+        </member>
+        <member name="T:Gas.Helpers.EnumHelper.EnumEnumerator">
+            <summary>
+            Provides functionality for enumerating enums as if they were collections.
+            </summary>
+        </member>
+        <member name="F:Gas.Helpers.EnumHelper.EnumEnumerator.enumType">
+            <summary>
+            The System.Type of the enum we are enumerating.
+            </summary>
+        </member>
+        <member name="F:Gas.Helpers.EnumHelper.EnumEnumerator.currentIndex">
+            <summary>
+            The index of the enum element we're currently at.
+            </summary>
+        </member>
+        <member name="F:Gas.Helpers.EnumHelper.EnumEnumerator.enumLength">
+            <summary>
+            The number of elements in the enum.
+            </summary>
+        </member>
+        <member name="M:Gas.Helpers.EnumHelper.EnumEnumerator.#ctor(System.Type)">
+            <summary>
+            Constructor: creates the enumerator.
+            </summary>
+        </member>
+        <member name="M:Gas.Helpers.EnumHelper.EnumEnumerator.MoveNext">
+            <summary>
+            Moves the enumerator to the next element in the enum.
+            </summary>
+            <returns>A boolean: false indicates we're done enumerating, true indicates
+            we still have some elements to go.</returns>
+        </member>
+        <member name="M:Gas.Helpers.EnumHelper.EnumEnumerator.Reset">
+            <summary>
+            Resets the enumerator to the first element in the enum.
+            </summary>
+        </member>
+        <member name="M:Gas.Helpers.EnumHelper.EnumEnumerator.GetEnumerator">
+            <summary>
+            Gets the enumerator.
+            </summary>
+        </member>
+        <member name="P:Gas.Helpers.EnumHelper.EnumEnumerator.Current">
+            <summary>
+            Gets the element of the enum we're currently at.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.RenderPacket">
+            <summary>
+            A packet of information dispatched to the renderer. Used to separate rendering from the scene graph.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.RenderPacket.#ctor(Gas.Graphics.IRenderable,System.String,Microsoft.DirectX.Matrix)">
+            <summary>
+            Initializes a new instance of RenderPacket.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.RenderPacket.#ctor(Gas.Graphics.IRenderable,System.String,Microsoft.DirectX.Matrix,System.Collections.Generic.List{System.Object})">
+            <summary>
+            Initializes a new instance of RenderPacket.
+            </summary>
+        </member>
+        <member name="F:Gas.Graphics.RenderPacket.RenderObject">
+            <summary>
+            The IRenderable object to be rendered.
+            </summary>
+        </member>
+        <member name="F:Gas.Graphics.RenderPacket.MaterialName">
+            <summary>
+            The name of the material with which RenderObject is to be rendered.
+            </summary>
+        </member>
+        <member name="F:Gas.Graphics.RenderPacket.LocalTransform">
+            <summary>
+            The local world transform for RenderObject.
+            </summary>
+        </member>
+        <member name="F:Gas.Graphics.RenderPacket.ExtraData">
+            <summary>
+            A collection of generic-type data. This can be used to store information specific to individual
+            instances of objects having the same material.
+            </summary>
+        </member>
+        <member name="T:Gas.Helpers.NativeMethods">
+            <summary>
+            Provides static access to native Win32 methods.
+            </summary>
+        </member>
+        <member name="M:Gas.Helpers.NativeMethods.PeekMessage(Gas.Helpers.NativeMethods.Message@,System.IntPtr,System.UInt32,System.UInt32,System.UInt32)">
+            <summary>
+            Tells us whether or not there's a new Win32 message to be handled.
+            </summary>
+        </member>
+        <member name="M:Gas.Helpers.NativeMethods.QueryPerformanceFrequency(System.Int64@)">
+            <summary>
+            Queries the performance frequency for high-resolution timing. The frequency
+            is the number of ticks per second.
+            </summary>
+        </member>
+        <member name="M:Gas.Helpers.NativeMethods.QueryPerformanceCounter(System.Int64@)">
+            <summary>
+            Queries the performance counter for high-resolution timing.
+            </summary>
+        </member>
+        <member name="M:Gas.Helpers.NativeMethods.GetPerformanceFrequency">
+            <summary>
+            Gets the performance frequency.
+            </summary>
+        </member>
+        <member name="M:Gas.Helpers.NativeMethods.GetPerformanceCounter">
+            <summary>
+            Gets the performance counter.
+            </summary>
+        </member>
+        <member name="T:Gas.Helpers.NativeMethods.Message">
+            <summary>
+            Stores a Win32 message.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.IRenderable">
+            <summary>
+            Defines the public interface to be implemented by all graphics objects that provide
+            rendering functionality.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.IRenderable.Render">
+            <summary>
+            Renders the object.
+            </summary>
+        </member>
+        <member name="T:Gas.Helpers.Config">
+            <summary>
+            Loads and stores configuration/settings data from a config file.
+            </summary>
+        </member>
+        <member name="F:Gas.Helpers.Config.config">
+            <summary>
+            Stores the settings as strings, and maps them to names.
+            </summary>
+        </member>
+        <member name="M:Gas.Helpers.Config.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of Config, and loads configuration/settings data
+            from the config file specified by the parameter 'filename'.
+            </summary>
+            <param name="filename"></param>
+        </member>
+        <member name="M:Gas.Helpers.Config.GetSetting``1(``0@,System.String)">
+            <summary>
+            Gets a setting according to its key, and casts it to type T. T must have a method called
+            "Parse" if it is not of type System.String.
+            </summary>
+        </member>
+        <member name="M:Gas.Helpers.Config.GetSetting``1(System.String)">
+            <summary>
+            Gets a setting according to its key, and casts it to type T. T must have a method called
+            "Parse".
+            </summary>
+        </member>
+        <member name="M:Gas.Helpers.Config.ReloadFromFile(System.String)">
+            <summary>
+            Clears the existing setting cache, parses the new settings file, and caches the data
+            for lookup later on.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.ProjectionMode">
+            <summary>
+            Describes how projections from view space to screen space are to be performed.
+            </summary>
+        </member>
+        <member name="F:Gas.Graphics.ProjectionMode.Perspective">
+            <summary>
+            Perspective projection. Used for true 3D graphics.
+            </summary>
+        </member>
+        <member name="F:Gas.Graphics.ProjectionMode.Orthogonal">
+            <summary>
+            Orthogonal projection. Used for doing 2D graphics without resorting to
+            transformed coordinates.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.Renderer">
+            <summary>
+            Initializes and manages Direct3D. Also provides comprehensive functionality 
+            for rendering the scene. The renderer uses the programmable pipeline exclusively
+            by way of the DirectX Effect framework and Gas's VisualEffect system.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.#ctor(System.Boolean,System.Windows.Forms.Control,System.Int32,System.Int32)">
+            <summary>
+            Initializes the renderer by firing up Direct3D and loading all resources into memory, such as 
+            materials and visual effects.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.SetDefault2DParameters">
+            <summary>
+            Sets up default view and projection matrices such that the camera is at (0,0,-5) facing the origin with
+            (0,1,0) being the up vector.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.AddGraphicsObject(Gas.Graphics.IGraphicsResource)">
+            <summary>
+            Adds an IGraphicsObject to the internal list of graphics objects.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.SaveRenderTarget">
+            <summary>
+            Saves a copy of the render target so that it can be restored later.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.RestoreRenderTarget">
+            <summary>
+            Restores the render target to one saved with SaveRenderTarget().
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.SetScreenAsRenderTarget">
+            <summary>
+            Sets the screen (i.e., back-buffer) as the render target.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.BuildProjectionMatrix(System.Drawing.Size)">
+            <summary>
+            Builds the projection matrix according to the projection mode.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.Clear(Microsoft.DirectX.Direct3D.ClearFlags,System.Drawing.Color,System.Single,System.Int32)">
+            <summary>
+            Clears optionally the target, depth buffer and/or stencil.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.Clear">
+            <summary>
+            Clears the target to black and the z-buffer to 1.0f.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.BindTexture(System.String,Gas.Graphics.Texture)">
+            <summary>
+            Binds a texture to an Effect parameter.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.Begin(Gas.Graphics.Effect)">
+            <summary>
+            Begins rendering with an effect. If 'effect' is null, then the fixed-function pipeline is used.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.SetPass(System.Int32)">
+            <summary>
+            Sets the Effect pass to render. Must be called between Begin() and End() calls.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.End">
+            <summary>
+            Ends rendering with an effect.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.Present">
+            <summary>
+            Presents the scene to the front buffer.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.LoadMaterials">
+            <summary>
+            Loads all the materials stored in the Materials directory. This assumes that all files in said
+            directory are material files.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.LoadVisualEffects">
+            <summary>
+            Loads all the VisualEffect DLL files stored in the VisualEffects directory. This assumes that all
+            files in said directory are DLL files containing an implementation of the VisualEffect interface.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.AddRenderPacket(Gas.Graphics.RenderPacket)">
+            <summary>
+            Adds a render packet to the internal list to be rendered upon calling Renderer.Render().
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.AddMaterial(Gas.Graphics.Material,System.String)">
+            <summary>
+            Adds a material to the internal list of materials.
+            </summary>
+            <param name="material"></param>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.Render">
+            <summary>
+            Renders all the RenderPackets. First, the packets are sorted according to material type to
+            minimize switching shaders at runtime. Second, Render() is called on the IRenderable instances
+            in all of the packets after setting the local world transforms.
+            
+            Once finished, the render packet list is emptied for next frame.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.Render(System.Boolean)">
+            <summary>
+            Renders all the RenderPackets.
+            </summary>
+            <param name="sortMaterials">Should the packets be sorted according to material type to minimize
+            switching shaders at runtime?</param>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.RegisterNewLight(System.Single,System.Single)">
+            <summary>
+            Adds a new light to the light list and returns a reference to it.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.RegisterNewLight(System.Single,System.Single,Microsoft.DirectX.Vector2,System.Drawing.Color)">
+            <summary>
+            Adds a new light to the light list and returns a reference to it.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.RemoveLight(Gas.Graphics.Light)">
+            <summary>
+            Removes a light from the internal list.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.RenderLine(Microsoft.DirectX.Vector3,Microsoft.DirectX.Vector3,System.Drawing.Color)">
+            <summary>
+            Renders a line going from start to end with the specified color.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.CreateEffect(System.String)">
+            <summary>
+            Creates a new Gas.Graphics.Effect.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.CreateFont(System.String,System.Int32)">
+            <summary>
+            Constructs a font object using the desired font family. If the desired family
+            is not supported, the fallback family defined in the Settings file is used.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.CreateMaterial">
+            <summary>
+            Creates a new material using the default parameters.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.CreateMaterial(Microsoft.DirectX.Direct3D.Material,System.String)">
+            <summary>
+            Builds a material using a standard Direct3D material structure and the name of the VisualEffect.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.CreateMesh(System.Int32,System.Int32)">
+            <summary>
+            Creates a new Mesh and allocates all the memory it will need.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.CreateRectangularMesh(System.Drawing.Color,System.Single,System.Single,System.Single)">
+            <summary>
+            Builds a rectangular mesh, centered around the origin.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.CreateRectangularMesh(System.Drawing.Color,System.Single,System.Single)">
+            <summary>
+            Builds a rectangular mesh, centered around the origin.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.CreateCircularMesh(System.Drawing.Color,System.Single,System.Int32,System.Single)">
+            <summary>
+            Builds a circular mesh centered around the origin.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.CreateCircularMesh(System.Drawing.Color,System.Single,System.Int32)">
+            <summary>
+            Builds a circular mesh centered around the origin.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.CreateSurface(System.String,System.Drawing.Size)">
+            <summary>
+            Creates a new surface.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.CreateSurface(System.String,System.Drawing.Size,System.Single)">
+            <summary>
+            Creates a new surface.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.CreateTextureFromFile(System.String)">
+            <summary>
+            Creates a texture from a file.
+            </summary>
+            <param name="filename">The name of the texture file to load.</param>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.CreateTextureAsRenderTarget(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Creates a texture as a render target.
+            </summary>
+            <param name="width">The width, in pixels, of the texture.</param>
+            <param name="height">The height, in pixels, of the texture.</param>
+            <param name="alpha">Should memory be allocated for alpha color components?</param>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.InitializeDirect3D(System.Boolean,System.Windows.Forms.Control,System.Int32,System.Int32)">
+            <summary>
+            Initializes Direct3D using passed in settings.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.OnDeviceDisposing(System.Object,System.EventArgs)">
+            <summary>
+            Disposes of all IGraphicsObjects.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.OnDeviceReset(System.Object,System.EventArgs)">
+            <summary>
+            Handles a device reset. Informs all IGraphicsObjects of the event.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.OnDeviceLost(System.Object,System.EventArgs)">
+            <summary>
+            Handles a lost device. Informs all IGraphicsObjects of the event.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.ChangeDevice(Gas.Graphics.DeviceSettings)">
+            <summary>
+            Changes the device with the new settings.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.ResetPresentParameters">
+            <summary>
+            Rebuilds present parameters in preparation for a device reset.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.Reset">
+            <summary>
+            Resets the device.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.FindBestWindowedSettings">
+            <summary>
+            Finds the best windowed Device settings supported by the system.
+            </summary>
+            <returns>
+            A DeviceSettings class full with the best supported windowed settings.
+            </returns>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.FindBestFullscreenSettings">
+            <summary>
+            Finds the best fullscreen Device settings supported by the system.
+            </summary>
+            <returns>
+            A DeviceSettings class full with the best supported fullscreen settings.
+            </returns>
+        </member>
+        <member name="M:Gas.Graphics.Renderer.CancelResize(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Cancels the automatic device reset on resize
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Renderer.CanDoVS11">
+            <summary>
+            Gets whether the render device supports vertex shader version 1.0.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Renderer.CanDoVS20">
+            <summary>
+            Gets whether the render device supports vertex shader version 2.0.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Renderer.CanDoVS30">
+            <summary>
+            Gets whether the render device supports vertex shader version 3.0.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Renderer.CanDoPS11">
+            <summary>
+            Gets whether the render device supports pixel shader version 1.1.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Renderer.CanDoPS20">
+            <summary>
+            Gets whether the render device supports pixel shader version 2.0.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Renderer.CanDoPS30">
+            <summary>
+            Gets whether the render device supports pixel shader version 3.0.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Renderer.Windowed">
+            <summary>
+            Gets and sets whether the Device is in windowed mode
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Renderer.Device">
+            <summary>
+            Gets the Direct3D device.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Renderer.FullscreenSize">
+            <summary>
+            Gets the resolution for fullscreen mode.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Renderer.CurrentSettings">
+            <summary>
+            Gets the current settings
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Renderer.WindowedSettings">
+            <summary>
+            Gets and sets the windowed settings
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Renderer.FullscreenSettings">
+            <summary>
+            Gets and sets the fullscreen settings
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Renderer.WorldMatrix">
+            <summary>
+            Gets and sets the world matrix.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Renderer.ViewMatrix">
+            <summary>
+            Gets and sets the view matrix.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Renderer.InverseViewMatrix">
+            <summary>
+            Gets the inverse of the view matrix.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Renderer.ProjectionMatrix">
+            <summary>
+            Gets or sets the projection matrix.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Renderer.WorldViewProjectionMatrix">
+            <summary>
+            Gets the world-view-projection matrix.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Renderer.FieldOfView">
+            <summary>
+            Gets the field of view.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Renderer.ProjectionMode">
+            <summary>
+            Gets or sets the projection mode.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Renderer.CurrentEffect">
+            <summary>
+            Gets the current Effect.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Renderer.Lights">
+            <summary>
+            Gets the list of lights.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.IGraphicsResource">
+            <summary>
+            Base interface for all graphics objects. The renderer maintains a list of 
+            IGraphicsObjects and updates them when the Direct3D device is reset or lost.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.IGraphicsResource.OnDeviceReset">
+            <summary>
+            Called when the Direct3D device is reset.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.IGraphicsResource.OnDeviceLost">
+            <summary>
+            Called when the Direct3D device is lost.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.SceneGraphNode">
+            <summary>
+            A node in the scene graph. Keeps a list of its children, and provides functionality for updating
+            the subtree of the scene graph with this node as its root.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.SceneGraphNode.#ctor(Gas.Graphics.Renderer,Gas.Graphics.SceneGraph)">
+            <summary>
+            Initializes a new instance of SceneGraphNode.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.SceneGraphNode.Update">
+            <summary>
+            Updates all the children of this node in the scene graph from left-to-right.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.SceneGraphNode.AddChild(Gas.Graphics.SceneGraphNode)">
+            <summary>
+            Adds a child to this node in the scene graph.
+            </summary>
+            <param name="child"></param>
+        </member>
+        <member name="M:Gas.Graphics.SceneGraphNode.Dispose">
+            <summary>
+            Frees all the resources controlled by this SceneGraphNode.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.LightNode.#ctor(Gas.Graphics.Renderer,Gas.Graphics.SceneGraph)">
+            <summary>
+            Initializes a new instance of LightNode.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.LightNode.#ctor(Gas.Graphics.Renderer,Gas.Graphics.SceneGraph,Microsoft.DirectX.Matrix,System.Single,System.Single,System.Drawing.Color)">
+            <summary>
+            Initializes a new instance of LightNode.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.LightNode.Update">
+            <summary>
+            Updates the light data, and updates all children nodes.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.LightNode.LocalTransform">
+            <summary>
+            Gets and sets the local transformation matrix.
+            </summary>
+        </member>
+        <member name="T:Gas.Input.MouseDevice">
+            <summary>
+            Helper class to acquire statistics about a mouse device.
+            </summary>
+        </member>
+        <member name="F:Gas.Input.MouseDevice.mouseDevice">
+            <summary>
+            The DirectInput device representing the mouse.
+            </summary>
+        </member>
+        <member name="F:Gas.Input.MouseDevice.movementVector">
+            <summary>
+            The mouse movement vector. The z-component is mapped to the mouse wheel, if it
+            is present.
+            </summary>
+        </member>
+        <member name="F:Gas.Input.MouseDevice.leftButtonPressed">
+            <summary>
+            Are the left or right mouse buttons pressed?
+            </summary>
+        </member>
+        <member name="F:Gas.Input.MouseDevice.rightButtonPressed">
+            <summary>
+            Are the left or right mouse buttons pressed?
+            </summary>
+        </member>
+        <member name="F:Gas.Input.MouseDevice.smoothingFactor">
+            <summary>
+            A number in the range [0,1]. The greater is this number, the greater is the motion of the mouse
+            smoothed. 0 indicates no smoothing at all.
+            </summary>
+        </member>
+        <member name="M:Gas.Input.MouseDevice.#ctor(System.Windows.Forms.Form)">
+            <summary>
+            Initializes the mouse device.
+            </summary>
+        </member>
+        <member name="M:Gas.Input.MouseDevice.Update">
+            <summary>
+            Polls the mouse device, and updates the statistics.
+            </summary>
+        </member>
+        <member name="P:Gas.Input.MouseDevice.MovementVector">
+            <summary>
+            Gets the movement vector. The z-component is mapped to the mouse wheel if it is
+            present.
+            </summary>
+        </member>
+        <member name="P:Gas.Input.MouseDevice.XDelta">
+            <summary>
+            Gets the x-delta, representing how far the mouse has moved along the x-axis.
+            </summary>
+        </member>
+        <member name="P:Gas.Input.MouseDevice.YDelta">
+            <summary>
+            Gets the y-delta, representing how far the mouse has moved along the y-axis.
+            </summary>
+        </member>
+        <member name="P:Gas.Input.MouseDevice.WheelDelta">
+            <summary>
+            Gets the wheel delta, representing how far the wheel was turned.
+            </summary>
+        </member>
+        <member name="P:Gas.Input.MouseDevice.LeftButtonPressed">
+            <summary>
+            Is the left button pressed down?
+            </summary>
+        </member>
+        <member name="P:Gas.Input.MouseDevice.RightButtonPressed">
+            <summary>
+            Is the right button pressed down?
+            </summary>
+        </member>
+        <member name="P:Gas.Input.MouseDevice.SmoothingFactor">
+            <summary>
+            A number in the range [0,1]. The higher this number, the greater is the motion of the mouse
+            smoothed.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.Triangle">
+            <summary>
+            Stores the indices of a triple of vertices that together constitute a triangle of a Mesh.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.Edge">
+            <summary>
+            Stores vertex data for a single edge of a Mesh.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Edge.#ctor(System.Int32,System.Int32,Microsoft.DirectX.Vector2,Microsoft.DirectX.Vector2)">
+            <summary>
+            Builds an Edge given two vertex indices.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Edge.Vertex1Index">
+            <summary>
+            Gets the index of the first vertex comprising the edge.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Edge.Vertex2Index">
+            <summary>
+            Gets the index of the second vertex comprising the edge.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Edge.Vertex1Pos">
+            <summary>
+            Gets the position of the first vertex comprising the edge.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Edge.Vertex2Pos">
+            <summary>
+            Gets the position of the second vertex comprising the edge.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Edge.Normal">
+            <summary>
+            Gets the vector normal to the edge.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.TriRenderingMode">
+            <summary>
+            Specifies how triangles are rendered by a Mesh.
+            </summary>
+        </member>
+        <member name="F:Gas.Graphics.TriRenderingMode.TriangleList">
+            <summary>
+            This is the most general rendering mode. The triangles to be rendered are specified 
+            explicitly using the Mesh.AddTriangle() method.
+            </summary>
+        </member>
+        <member name="F:Gas.Graphics.TriRenderingMode.TriangleStrip">
+            <summary>
+            Triangles are rendered as a strip.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.Mesh">
+            <summary>
+            Represents a 2D mesh. Stores vertex, triangle, and index data, and also provides
+            functionality for rendering the mesh.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Mesh.#ctor(Gas.Graphics.Renderer,System.Int32,System.Int32)">
+            <summary>
+            Creates the mesh and allocates all the memory it will need.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Mesh.AddVertex(System.Int32,Microsoft.DirectX.Vector3,System.Drawing.Color,Microsoft.DirectX.Vector2)">
+            <summary>
+            Adds a vertex to the mesh.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Mesh.AddTriangle(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Informs the Mesh that a certain triple of vertices is to be treated as a triangle.
+            </summary>
+            <param name="index">The index of this triangle in the triangle list.</param>
+            <param name="v1">The index of the first vertex making up this triangle.</param>
+            <param name="v2">The index of the second vertex making up this triangle.</param>
+            <param name="v3">The index of the third vertex making up this triangle.</param>
+        </member>
+        <member name="M:Gas.Graphics.Mesh.Render">
+            <summary>
+            Renders the mesh.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Mesh.Rectangle(Gas.Graphics.Renderer,System.Drawing.Color,System.Single,System.Single)">
+            <summary>
+            Builds a rectangular mesh, centered around the origin.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Mesh.Rectangle(Gas.Graphics.Renderer,System.Drawing.Color,System.Single,System.Single,System.Single)">
+            <summary>
+            Builds a rectangular mesh, centered around the origin.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Mesh.Circle(Gas.Graphics.Renderer,System.Drawing.Color,System.Single,System.Int32)">
+            <summary>
+            Builds a circular mesh centered around the origin.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Mesh.Circle(Gas.Graphics.Renderer,System.Drawing.Color,System.Single,System.Int32,System.Single)">
+            <summary>
+            Builds a circular mesh centered around the origin.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Mesh.GetEdge(System.Int32)">
+            <summary>
+            Gets an edge of the mesh. For N less than NumVertices - 1, the Nth edge consists of vertex
+            indices {N, N+1}. If N == NumVertices - 1, then the Nth edge is {N, 0}. Thus the number of edges
+            is the same as the number of vertices.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Mesh.GetVertexPosition(System.Int32)">
+            <summary>
+            Gets the position of the Nth vertex in model space.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Mesh.GetAveragedCenter">
+            <summary>
+            Calculates the average of all the vertices to approximate the center of the mesh.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gas.Graphics.Mesh.ComputeRadius">
+            <summary>
+            Calculates the radius--the maximum distance of a vertex from the center.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Mesh.Intersects(Gas.Graphics.Mesh,Microsoft.DirectX.Matrix,Microsoft.DirectX.Matrix)">
+            <summary>
+            Determines if two static (non-moving) meshes interpenetrate.
+            </summary>
+            <param name="other">The mesh to test for intersection against.</param>
+            <param name="worldMat1">The world transform matrix for this mesh.</param>
+            <param name="worldMat2">The world transform matrix for 'other'.</param>
+            <returns>A boolean value indicating whether interpenetration occurs.</returns>
+        </member>
+        <member name="P:Gas.Graphics.Mesh.Vertices">
+            <summary>
+            Returns the vertex list.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Mesh.Radius">
+            <summary>
+            Let x be the vertex farthest from the averaged center of the mesh. Then the distance from the center
+            to x is the radius.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Mesh.AveragedCenter">
+            <summary>
+            Gets the center of the mesh, computed by averaging the vertices (arithmetic mean).
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Mesh.NumVertices">
+            <summary>
+            Gets the number of vertices in the mesh.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Mesh.NumTriangles">
+            <summary>
+            Gets the number of triangles in the mesh.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Mesh.NumEdges">
+            <summary>
+            Gets the number of edges in the mesh.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Mesh.TriRenderingMode">
+            <summary>
+            Gets and sets the triangle rendering mode.
+            </summary>
+        </member>
+        <member name="T:Gas.Input.KeyboardDevice">
+            <summary>
+            Helper class to acquire statistics about a keyboard device.
+            </summary>
+        </member>
+        <member name="F:Gas.Input.KeyboardDevice.keyboard">
+            <summary>
+            The DirectInput device representing the keyboard.
+            </summary>
+        </member>
+        <member name="F:Gas.Input.KeyboardDevice.state">
+            <summary>
+            Statistics detailing the current state of the keyboard (such as which keys are pressed).
+            </summary>
+        </member>
+        <member name="M:Gas.Input.KeyboardDevice.#ctor(System.Windows.Forms.Form)">
+            <summary>
+            Initializes a new instance of KeyboardDevice.
+            </summary>
+        </member>
+        <member name="M:Gas.Input.KeyboardDevice.Update">
+            <summary>
+            Acquires updated keyboard state statistics.
+            </summary>
+        </member>
+        <member name="P:Gas.Input.KeyboardDevice.Left">
+            <summary>
+            Is the left arrow key pressed?
+            </summary>
+        </member>
+        <member name="P:Gas.Input.KeyboardDevice.Right">
+            <summary>
+            Is the right arrow key pressed?
+            </summary>
+        </member>
+        <member name="P:Gas.Input.KeyboardDevice.Up">
+            <summary>
+            Is the up arrow key pressed?
+            </summary>
+        </member>
+        <member name="P:Gas.Input.KeyboardDevice.Down">
+            <summary>
+            Is the down arrow key pressed?
+            </summary>
+        </member>
+        <member name="P:Gas.Input.KeyboardDevice.W">
+            <summary>
+            Is the W key pressed?
+            </summary>
+        </member>
+        <member name="P:Gas.Input.KeyboardDevice.A">
+            <summary>
+            Is the A key pressed?
+            </summary>
+        </member>
+        <member name="P:Gas.Input.KeyboardDevice.S">
+            <summary>
+            Is the S key pressed?
+            </summary>
+        </member>
+        <member name="P:Gas.Input.KeyboardDevice.D">
+            <summary>
+            Is the D key pressed?
+            </summary>
+        </member>
+        <member name="P:Gas.Input.KeyboardDevice.Escape">
+            <summary>
+            Is the Escape key pressed?
+            </summary>
+        </member>
+        <member name="P:Gas.Input.KeyboardDevice.State">
+            <summary>
+            Returns the KeyboardState indicating whether each key is pressed or not.
+            </summary>
+        </member>
+        <member name="T:Gas.Helpers.HighResTimer">
+            <summary>
+            High-resolution timer. Adapted from the Rocket Commander source freely available
+            from http://www.rocketcommander.com -- I also cleaned up the code quite a bit, and
+            made the comments a tad more lucid. ^^
+            </summary>
+        </member>
+        <member name="F:Gas.Helpers.HighResTimer.startTimeNs">
+            <summary>
+            The time (in nanoseconds) that this HighResTimer started timing.
+            </summary>
+        </member>
+        <member name="F:Gas.Helpers.HighResTimer.lastTimeNs">
+            <summary>
+            The time (in nanoseconds) that the last frame ended.
+            </summary>
+        </member>
+        <member name="F:Gas.Helpers.HighResTimer.elapsedTimeNs">
+            <summary>
+            The total time (in nanoseconds) elapsed since this HighResTimer started timing.
+            </summary>
+        </member>
+        <member name="F:Gas.Helpers.HighResTimer.elapsedTimeLastFrameNs">
+            <summary>
+            The length of the last frame in nanoseconds.
+            </summary>
+        </member>
+        <member name="F:Gas.Helpers.HighResTimer.elapsedTimeLastFrameMs">
+            <summary>
+            The length of the last frame in milliseconds.
+            </summary>
+        </member>
+        <member name="F:Gas.Helpers.HighResTimer.frameCountThisSecond">
+            <summary>
+            The number of frames passed this second.
+            </summary>
+        </member>
+        <member name="F:Gas.Helpers.HighResTimer.totalFrameCount">
+            <summary>
+            The total number of frames passed since this HighResTimer started timing.
+            </summary>
+        </member>
+        <member name="F:Gas.Helpers.HighResTimer.fpsLastSecond">
+            <summary>
+            The FPS last second.
+            </summary>
+        </member>
+        <member name="F:Gas.Helpers.HighResTimer.startTimeThisSecondNs">
+            <summary>
+            The time (in nanoseconds) that this second started.
+            </summary>
+        </member>
+        <member name="F:Gas.Helpers.HighResTimer.performanceFrequency">
+            <summary>
+            The performance frequency.
+            </summary>
+        </member>
+        <member name="M:Gas.Helpers.HighResTimer.ConvertToNs(System.Int64)">
+            <summary>
+            Converts a performance counter value to nanoseconds.
+            </summary>
+        </member>
+        <member name="M:Gas.Helpers.HighResTimer.Update">
+            <summary>
+            Updates the timing statistics.
+            </summary>
+        </member>
+        <member name="P:Gas.Helpers.HighResTimer.LastFrameElapsedNs">
+            <summary>
+            The time elapsed last frame in nanoseconds.
+            </summary>
+        </member>
+        <member name="P:Gas.Helpers.HighResTimer.TotalElapsedNs">
+            <summary>
+            The total time elapsed (in nanoseconds) since this HighResTimer started timing.
+            </summary>
+        </member>
+        <member name="P:Gas.Helpers.HighResTimer.LastFrameElapsedMs">
+            <summary>
+            The time elapsed last frame in milliseconds.
+            </summary>
+        </member>
+        <member name="P:Gas.Helpers.HighResTimer.TotalElapsedMs">
+            <summary>
+            The total time elapsed (in milliseconds) since this HighResTimer started timing.
+            </summary>
+        </member>
+        <member name="P:Gas.Helpers.HighResTimer.FramesPerSecond">
+            <summary>
+            The frames per second. Updated once per second.
+            </summary>
+        </member>
+        <member name="P:Gas.Helpers.HighResTimer.TotalFrames">
+            <summary>
+            The total number of frames elapsed since this HighResTimer started timing.
+            </summary>
+        </member>
+        <member name="P:Gas.Helpers.HighResTimer.MoveFactorPerSecond">
+            <summary>
+            This is the factor by which physics calculations should be scaled. This
+            helps to ensure that motion proceeds in a time-based manner rather than
+            a frame-based one. It also allows motion constants to be expressed
+            in terms of a rigid time unit (the second).
+            
+            As an example, if we are getting 1 frame per second, this will be 1.0f. If
+            we are getting 100 frames per second, then this will be 0.01f.
+            </summary>
+        </member>
+        <member name="T:Gas.Helpers.BigScreenMessage">
+            <summary>
+            Displays a large message in the center of the screen using Windows.Forms.
+            </summary>
+        </member>
+        <member name="F:Gas.Helpers.BigScreenMessage.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Gas.Helpers.BigScreenMessage.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Gas.Helpers.BigScreenMessage.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Gas.Helpers.BigScreenMessage.Message">
+            <summary>
+            Gets and sets the big message to display.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.GeometryNode">
+            <summary>
+            Represents a local transform in the scene graph hierarchy.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.GeometryNode.#ctor(Gas.Graphics.Renderer,Gas.Graphics.SceneGraph)">
+            <summary>
+            Initializes a new instance of GeometryNode.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.GeometryNode.#ctor(Gas.Graphics.Renderer,Gas.Graphics.SceneGraph,Microsoft.DirectX.Matrix,Gas.Graphics.IRenderable,System.String)">
+            <summary>
+            Initializes a new instance of GeometryNode.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.GeometryNode.Update">
+            <summary>
+            Pushes the local transform onto the matrix stack, renders this node, 
+            updates all the children of this node in the scene graph, and then 
+            pops this local transform.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.GeometryNode.LocalTransform">
+            <summary>
+            Gets and sets the local transform matrix.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.Font">
+            <summary>
+            Encapsulates a Direct3D font object. Automatically handles dealing with
+            Direct3D.Sprite, and provides auxiliary methods for specialized text
+            rendering.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Font.#ctor(Gas.Graphics.Renderer,System.String,System.Int32)">
+            <summary>
+            Constructs the font object using the desired font family. If the desired family
+            is not supported, the fallback family defined in the Settings file is used.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Font.RenderText(Microsoft.DirectX.Vector2,System.String,System.Drawing.Color,System.Boolean)">
+            <summary>
+            Renders text to the screen.
+            </summary>
+            <param name="position">The transformed screen-coordinates at which to render
+            the text.</param>
+            <param name="text">The string to render.</param>
+            <param name="color">The color of the text.</param>
+            <param name="shadowed">Should the text be rendered with a shadow?</param>
+        </member>
+        <member name="M:Gas.Graphics.Font.RenderText(Microsoft.DirectX.Vector2,System.String,System.Boolean)">
+            <summary>
+            Renders text to the screen, in the color white.
+            </summary>
+            <param name="position">The transformed screen-coordinates at which to render
+            the text.</param>
+            <param name="text">The string to render.</param>
+            <param name="shadowed">Should the text be rendered with a shadow?</param>
+        </member>
+        <member name="M:Gas.Graphics.Font.RenderTextCentered(Microsoft.DirectX.Vector2,System.String,System.Drawing.Color,System.Boolean)">
+            <summary>
+            Renders centered text.
+            </summary>
+            <param name="position">The positon that will be used as the center of the text.</param>
+            <param name="text">The string to render.</param>
+            <param name="color">The color of the text.</param>
+            <param name="shadowed">Should the text be rendered with a shadow?</param>
+        </member>
+        <member name="P:Gas.Graphics.Font.ShadowColor">
+            <summary>
+            Gets or sets the shadow color.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Font.ShadowOffset">
+            <summary>
+            Gets or sets the shadow offset.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Font.Height">
+            <summary>
+            Gets the height of the font.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.BloomPostProcessor">
+            <summary>
+            This class applies bloom post-processing to the scene. All effects are rendered using
+            pixel shaders. It requires vertex shader 1.1 and pixel shader 2.0.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.BloomPostProcessor.#ctor(Gas.Graphics.Renderer)">
+            <summary>
+            Initializes the BloomPostProcessor.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.BloomPostProcessor.Render">
+            <summary>
+            Applies the bloom effect to the scene image, and then renders the resulting bloomed
+            image to the screen.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.BloomPostProcessor.SetEffectParameters">
+            <summary>
+            Sets the bloom effect parameters to the values stored in this class.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.BloomPostProcessor.DoFinalizePass">
+            <summary>
+            Finalizes the rendering technique by combining the bloom image with the scene image, and 
+            rendering the composite to the screen.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.BloomPostProcessor.DoBlurVerticalPass">
+            <summary>
+            Renders the vertical Gaussian blur pass.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.BloomPostProcessor.DoBlurHorizontalPass">
+            <summary>
+            Renders the horizontal Gaussian blur pass.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.BloomPostProcessor.DoBrightPass">
+            <summary>
+            Renders the bright pass.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.BloomPostProcessor.SceneImage">
+            <summary>
+            Sets the scene image, to which the bloom effect is applied during rendering.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.BloomPostProcessor.Blur">
+            <summary>
+            Gets and sets the blur amount. The amount of visual blur is inversely proportional to this
+            value.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.BloomPostProcessor.BloomScale">
+            <summary>
+            Gets and sets the bloom scale.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.BloomPostProcessor.BrightPassThreshold">
+            <summary>
+            Gets and sets the bright pass threshold. This is essentially the minimum brightness
+            that a pixel must possess to be bloomed.
+            
+            The brightness of a pixel is defined as follows:
+            
+            brightness = (1/3) * R + (1/3) * G + (1/3) * B = (1/3) * (R + G + B)
+            
+            This value always falls in the range [0,1].
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.AdapterEnum">
+            <summary>
+            Represents a system adapter.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.DeviceEnum">
+            <summary>
+            Represents the capabilities and description of a single device.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.DeviceSettingsEnum">
+            <summary>
+            Represents the various settings and configurations a device can have.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.DeviceSettings">
+            <summary>
+            Represents the settings for a single device configuration.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.DeviceSettings.Clone">
+            <summary>
+            Clones this instance of DeviceSettings.
+            </summary>
+            <returns>The clone.</returns>
+        </member>
+        <member name="T:Gas.Graphics.DisplayModeSorter">
+            <summary>
+            Sorts display modes.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.DisplayModeSorter.Compare(Microsoft.DirectX.Direct3D.DisplayMode,Microsoft.DirectX.Direct3D.DisplayMode)">
+            <summary>
+            Compares two display modes.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.D3DEnum">
+            <summary>
+            Enumerates adapter and device capabilities.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.D3DEnum.EnumerateAdapters">
+            <summary>
+            Enumerates all the adapters in the system.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.D3DEnum.EnumerateDisplayModes(Microsoft.DirectX.Direct3D.AdapterInformation,Gas.Graphics.AdapterEnum)">
+            <summary>
+            Enumerates all the supported display modes for a given adapter.
+            </summary>
+            <param name="a">The adapter to enumerate.</param>
+            <param name="currentAdapter">AdapterEnum that stores the list of DisplayModes.</param>
+            <returns>An ArrayList of supported Adapter Formats used in the supported DisplayModes.</returns>
+        </member>
+        <member name="M:Gas.Graphics.D3DEnum.EnumerateDevices(Gas.Graphics.AdapterEnum,System.Collections.ArrayList)">
+            <summary>
+            Enumerates all the devices that an Adapter can make.
+            </summary>
+            <param name="currentAdapter">The adapter in question.</param>
+            <param name="adapterFormatList">An ArrayList of of Adapter Formats supported 
+            by currentAdapter.</param>
+        </member>
+        <member name="M:Gas.Graphics.D3DEnum.EnumerateDeviceSettings(Gas.Graphics.DeviceEnum,Gas.Graphics.AdapterEnum,System.Collections.ArrayList)">
+            <summary>
+            Enumerates possible device settings/configurations for a given device.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.D3DEnum.EnumerateDepthStencilFormats(Gas.Graphics.DeviceSettingsEnum)">
+            <summary>
+            Enumerates all the depth stencil formats compatible with the given device settings.
+            </summary>
+            <param name="deviceSettings"></param>
+        </member>
+        <member name="M:Gas.Graphics.D3DEnum.EnumerateMultiSampleTypes(Gas.Graphics.DeviceSettingsEnum)">
+            <summary>
+            Enumerates all the compatible multisample types compatible with the given device settings.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.D3DEnum.EnumerateVertexProcessingTypes(Gas.Graphics.DeviceSettingsEnum)">
+            <summary>
+            Enumerates all the VertexProcessingTypes compatible with the given device settings.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.D3DEnum.EnumeratePresentIntervals(Gas.Graphics.DeviceSettingsEnum)">
+            <summary>
+            Enumerates all the present intervals the given device settings support.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.D3DEnum.Adapters">
+            <summary>
+            Gets the list of supported adapters.
+            </summary>
+        </member>
+        <member name="T:Gas.Helpers.Log">
+            <summary>
+            This class will automatically create a log file. It provides static
+            functionality for writing log/error/debug information for run-time error
+            checking.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.MainVisualEffectClassAttribute">
+            <summary>
+            This attribute indicates that the class it's attached to is the main class in the VisualEffect DLL file.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.VisualEffect">
+            <summary>
+            This base class defines the general interface which all visual effects must implement in their
+            associated DLL files. The implementation of this class in the DLL should be flagged with the
+            MainVisualEffectClass attribute.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.VisualEffect.BeginRenderScene">
+            <summary>
+            This is called to prepare the VisualEffect for rendering the scene.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.VisualEffect.EndRenderScene">
+            <summary>
+            This is called to inform the VisualEffect that scene rendering is over.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.VisualEffect.BeginRenderObject(Gas.Graphics.Material)">
+            <summary>
+            This is called right before rendering a specific geometry chunk.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.VisualEffect.BeginRenderObject(Gas.Graphics.Material,System.Collections.Generic.List{System.Object})">
+            <summary>
+            This is called right before rendering a specific geometry chunk. Includes a parameter
+            for passing extra data needed for rendering this specific chunk.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.VisualEffect.EndRenderObject">
+            <summary>
+            This is called right after rendering a specific geometry chunk.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.VisualEffect.#ctor(Gas.Graphics.Renderer)">
+            <summary>
+            Initializes a new instance of VisualEffect.
+            </summary>
+            <param name="renderer"></param>
+        </member>
+        <member name="T:Gas.Graphics.CachedFont">
+            <summary>
+            Stores information about a cached font.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.GlobalResourceCache">
+            <summary>
+            Caches resources as they are created, so that a single resource can be shared among objects
+            without being duplicated in memory.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.GlobalResourceCache.CreateTextureFromFile(Gas.Graphics.Renderer,System.String)">
+            <summary>
+            Create a texture from a file. If the texture has already been created, the cached
+            version is returned.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.GlobalResourceCache.CreateFont(Gas.Graphics.Renderer,System.String,System.Int32)">
+            <summary>
+            Creates a font. If the font has already been created, the cached version is returned.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.GlobalResourceCache.CreateEffectFromFile(Gas.Graphics.Renderer,System.String)">
+            <summary>
+            Creates an effect from a file. If the effect has already been created, the cached version
+            is returned.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.GlobalResourceCache.CreateMaterialFromFile(Gas.Graphics.Renderer,System.String)">
+            <summary>
+            Creates a material from a file. If the material has already been created, the cached version
+            is returned.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.Texture">
+            <summary>
+            Encapsulates a Direct3D.Texture object. Also provides functionality for setting the texture
+            as a render target.
+            </summary>
+        </member>
+        <member name="F:Gas.Graphics.Texture.d3dSurface">
+            <summary>
+            Used for rendering to a texture.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Texture.#ctor(Gas.Graphics.Renderer,System.String)">
+            <summary>
+            Creates the texture from a file.
+            </summary>
+            <param name="renderer">The renderer.</param>
+            <param name="filename">The name of the texture file to load.</param>
+        </member>
+        <member name="M:Gas.Graphics.Texture.#ctor(Gas.Graphics.Renderer,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Creates the texture as a render target.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Texture.OnDeviceReset">
+            <summary>
+            Handles a device reset.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Texture.OnDeviceLost">
+            <summary>
+            Handles a lost device.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Texture.Select">
+            <summary>
+            Places this texture on texture stage 0.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Texture.SetAsRenderTarget">
+            <summary>
+            Sets this texture as the render target.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Texture.Filename">
+            <summary>
+            Gets the texture filename.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Texture.Size">
+            <summary>
+            Gets the size of the texture.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Texture.Width">
+            <summary>
+            Gets the width of the texture.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Texture.Height">
+            <summary>
+            Gets the height of the texture.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Texture.D3DTexture">
+            <summary>
+            Gets the Direct3D texture object.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Texture.Valid">
+            <summary>
+            Is this texture valid to use?
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Texture.HasAlphaPixels">
+            <summary>
+            Does this texture contain alpha information?
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.Light">
+            <summary>
+            Represents a point light positioned in the XY plane.
+            </summary>
+        </member>
+        <member name="F:Gas.Graphics.Light.renderer">
+            <summary>
+            A reference to the renderer.
+            </summary>
+        </member>
+        <member name="F:Gas.Graphics.Light.position">
+            <summary>
+            The light's position in the XY plane.
+            </summary>
+        </member>
+        <member name="F:Gas.Graphics.Light.range">
+            <summary>
+            The range of the light. This represents the maximum distance an object can be from this light
+            and still be lit by it.
+            </summary>
+        </member>
+        <member name="F:Gas.Graphics.Light.color">
+            <summary>
+            The color of light emmitted by this light source.
+            </summary>
+        </member>
+        <member name="F:Gas.Graphics.Light.intensity">
+            <summary>
+            A value in the range [0, 1] representing the intensity of this light.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Light.Position">
+            <summary>
+            Gets and sets the light's position.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Light.Color">
+            <summary>
+            Gets and sets the light color.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Light.Range">
+            <summary>
+            Gets and sets the range of the light. This represents the maximum distance 
+            an object can be from this light and still be lit by it. 
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Light.Intensity">
+            <summary>
+            Gets and sets the range of the light. This represents the maximum distance 
+            an object can be from this light and still be lit by it.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.Surface">
+            <summary>
+            Represents a flat, textured 2D surface which is rendered with a Material.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Surface.#ctor(Gas.Graphics.Renderer,System.String,System.Drawing.Size)">
+            <summary>
+            Initializes a new instance of Surface.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Surface.#ctor(Gas.Graphics.Renderer,System.String,System.Drawing.Size,System.Single)">
+            <summary>
+            Initializes a new instance of Surface.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Surface.Render(Microsoft.DirectX.Matrix)">
+            <summary>
+            Renders the surface.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Surface.Render(Microsoft.DirectX.Vector3)">
+            <summary>
+            Renders the surface.
+            </summary>
+            <param name="pos">The position of the upper-left corner in world space.</param>
+        </member>
+        <member name="M:Gas.Graphics.Surface.Render(Microsoft.DirectX.Matrix,System.Collections.Generic.List{System.Object})">
+            <summary>
+            Renders the surface.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Surface.Render(Microsoft.DirectX.Vector3,System.Collections.Generic.List{System.Object})">
+            <summary>
+            Renders the surface.
+            </summary>
+            <param name="pos">The position of the upper-left corner in world space.</param>
+        </member>
+        <member name="M:Gas.Graphics.Surface.Render">
+            <summary>
+            Renders the surface at (0,0,0).
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Surface.Size">
+            <summary>
+            Gets the size of the Surface in pixels.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Surface.Mesh">
+            <summary>
+            Gets the Mesh used for rendering the surface.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.GraphicsForm">
+            <summary>
+            A form that is ready-to-go for graphics rendering.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.GraphicsForm.SetupForDirect3D(System.Boolean,System.Int32,System.Int32,System.String)">
+            <summary>
+            Prepares the form so that it behaves better with Direct3D; initializes
+            the renderer; and finally hooks up appropriate event handlers for handling
+            the Direct3D device.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.GraphicsForm.OnDeviceResizing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Invoked when the device detects the render target being resized. This handler
+            checks if the device has been lost, and if so, cancels the event. It also
+            imposes a minimum form size of 320x200.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.GraphicsForm.OnResize(System.Object,System.EventArgs)">
+            <summary>
+            Invoked when the form is resized. This handler updates the environment,
+            and renders the scene if safe.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.GraphicsForm.Run(System.Boolean,System.Int32,System.Int32,System.String)">
+            <summary>
+            The game loop. Hooks up the appropriate event handlers, and runs the application.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.GraphicsForm.OnApplicationIdle(System.Object,System.EventArgs)">
+            <summary>
+            Updates and renders the 3D environment on the Application.Idle event.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.GraphicsForm.InitializeGame">
+            <summary>
+            Sets up the game. Called after Direct3D initialization.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.GraphicsForm.UpdateEnvironment">
+            <summary>
+            Updates the game environment.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.GraphicsForm.Render3DEnvironment">
+            <summary>
+            Renders the game environment.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.GraphicsForm.AppStillIdle">
+            <summary>
+            Is the application idle, or are there messages waiting to be handled?
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.GraphicsForm.ReadyToRender">
+            <summary>
+            Are we ready to render this frame, or should we hold back until either
+            the window and/or the Direct3D device are better behaved?
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.Effect">
+            <summary>
+            Encapsulates a Direct3D.Effect object. Provides a simplified interface, performs
+            extensive error checking, caches effect parameter handles, and provides some additional 
+            functionality. This class is used for all the shader effects in the game.
+            
+            Assumes the existence of a default technique named "DefaultTechnique".
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Effect.CommitChanges">
+            <summary>
+            Propagates the state change that occurs inside of an active pass to the device before rendering.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Effect.BeginTechnique">
+            <summary>
+            Begins the technique named "DefaultTechnique".
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Effect.Pass(System.Int32)">
+            <summary>
+            Ends the current pass if there is one, and begins the next one.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Effect.EndTechnique">
+            <summary>
+            Ends the current technique.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.MatrixStack">
+            <summary>
+            Represents complicated transformations by storing them as the concatenation of many submatrices
+            stored in a stack structure. The organizational structure and dynamics of the internal stack allow
+            spatial relationships between many objects to be stored in a convenient and computationally 
+            inexpensive manner.
+            
+            The Nth matrix in the stack is the product of all matrices preceding it and another, external matrix.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.MatrixStack.Push(Microsoft.DirectX.Matrix)">
+            <summary>
+            Concatenates a matrix with the composite local transform represented by the stack, and pushes
+            the result onto the top of the stack.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.MatrixStack.Pop">
+            <summary>
+            Pops the topmost matrix off of the stack.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.MatrixStack.CompositeTransform">
+            <summary>
+            Gets the composite local matrix transform represented by the matrix stack. This is the product 
+            of all the matrices in the stack, multiplied from top to bottom.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.SceneGraph">
+            <summary>
+            Represents a scene graph: an object-oriented structure for storing and working with
+            relationships between scene objects. The effects of parent nodes are propagated down to
+            their children, so that as the tree is traversed effects are accumulated. Thus, scene data
+            can be arranged in a very hierarchical fashion, allowing efficient and intuitive storage of complicated
+            spatial as well as other relationships.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.SceneGraph.#ctor(Gas.Graphics.Renderer)">
+            <summary>
+            Initializes a new instance of SceneGraph.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.SceneGraph.Update">
+            <summary>
+            Traverses the graph recursively, updating all the nodes.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.SceneGraph.MatrixStack">
+            <summary>
+            Gets the internal matrix stack, used for accumulating local matrix transforms
+            as the scene graph is traversed.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.SceneGraph.Root">
+            <summary>
+            Gets the root node of the scene graph.
+            </summary>
+        </member>
+        <member name="T:Gas.Helpers.StringHelper">
+            <summary>
+            Contains static methods to ease working with strings.
+            </summary>
+        </member>
+        <member name="M:Gas.Helpers.StringHelper.#ctor">
+            <summary>
+            Private constructor to disallow instantiation.
+            </summary>
+        </member>
+        <member name="M:Gas.Helpers.StringHelper.CaseInsensitiveCompare(System.String,System.String)">
+            <summary>
+            Performs a case insensitive comparison of two strings. For example, this method
+            will deem "ABcD" as being equal to "abCd".
+            </summary>
+            <param name="s1">The first comparand.</param>
+            <param name="s2">The second comparand.</param>
+            <returns>A boolean value indicating whether the two strings were
+            deemed equivalent or not.</returns>
+        </member>
+        <member name="M:Gas.Helpers.StringHelper.GetExtension(System.String)">
+            <summary>
+            Extracts the extension (without the period) from a filename. For example,
+            GetExtension("testImage.png") will return the string "png".
+            </summary>
+            <param name="filename">The filename from which to extract the extension.</param>
+            <returns>A string representing the file extension, without the period.</returns>
+        </member>
+        <member name="M:Gas.Helpers.StringHelper.RemoveExtension(System.String)">
+            <summary>
+            Removes the extension (including the period) from a filename. For example,
+            RemoveExtension("testImage.png") will return the string "testImage".
+            </summary>
+        </member>
+        <member name="M:Gas.Helpers.StringHelper.GetNameOfFile(System.String)">
+            <summary>
+            Gets the name of a file without extension. For example, GetNameOfFile("Images\testImage.png")
+            will return "testImage".
+            </summary>
+        </member>
+        <member name="M:Gas.Helpers.StringHelper.ContainsOnlyWhitespace(System.String)">
+            <summary>
+            Returns true if a given string contains only whitespace. Returns false otherwise.
+            </summary>
+        </member>
+        <member name="T:Gas.Graphics.Material">
+            <summary>
+            Represents a material. Stores the usual material information using Direct3D.Material, 
+            as well as 8 textures for rendering and the name of the VisualEffect this material is 
+            associated with.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Material.#ctor(Gas.Graphics.Renderer)">
+            <summary>
+            Builds the material using default parameters.
+            </summary>
+        </member>
+        <member name="M:Gas.Graphics.Material.#ctor(Gas.Graphics.Renderer,Microsoft.DirectX.Direct3D.Material,System.String)">
+            <summary>
+            Builds the material using a standard Direct3D material structure and the name of the VisualEffect.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Material.D3DMaterial">
+            <summary>
+            Gets or sets the internal Direct3D.Material object used by WarOfTheSeas.Graphics.Material.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Material.Ambient">
+            <summary>
+            Gets and sets the ambient color.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Material.Diffuse">
+            <summary>
+            Gets and sets the diffuse color.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Material.Specular">
+            <summary>
+            Gets and sets the specular color.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Material.Shininess">
+            <summary>
+            Gets and sets the shininess (specular exponent).
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Material.VisualEffectName">
+            <summary>
+            Gets and sets the name of the VisualEffect with which this material will be rendered.
+            </summary>
+        </member>
+        <member name="P:Gas.Graphics.Material.Textures">
+            <summary>
+            Gets the texture list. This list stores up to 8 textures.
+            </summary>
+        </member>
+    </members>
+</doc>

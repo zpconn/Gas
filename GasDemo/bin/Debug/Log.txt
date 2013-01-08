@@ -1,0 +1,43 @@
+﻿
+/// Session started at: 7/16/2006 1:17:31 PM
+/// GasDemo v1.0.0.0
+
+[13:17:31] Unable to read setting BrightPassThreshold and cast it to type System.Single
+
+/// Session started at: 10/13/2012 3:02:03 PM
+/// GasDemo v1.0.0.0
+
+[15:02:03] Unable to create effect E:\Code\Projects\Gas\GasDemo\bin\Release\FXFiles\Lighting.fx. The compilation errors were: 
+
+
+[15:02:03] Unable to create effect E:\Code\Projects\Gas\GasDemo\bin\Release\FXFiles\Lighting.fx. The compilation errors were: 
+
+
+[15:02:03] Unable to create effect E:\Code\Projects\Gas\GasDemo\bin\Release\FXFiles\Lighting.fx. The compilation errors were: 
+
+
+[15:02:03] Unable to create effect E:\Code\Projects\Gas\GasDemo\bin\Release\FXFiles\Lighting.fx. The compilation errors were: 
+
+
+[15:02:03] Unable to create effect E:\Code\Projects\Gas\GasDemo\bin\Release\FXFiles\Water.fx. The compilation errors were: 
+
+
+
+/// Session started at: 10/13/2012 3:14:11 PM
+/// GasDemo v1.0.0.0
+
+[15:14:11] Unable to create effect E:\Code\Projects\Gas\GasDemo\bin\Release\FXFiles\Lighting.fx. The compilation errors were: 
+
+
+[15:14:11] Unable to create effect E:\Code\Projects\Gas\GasDemo\bin\Release\FXFiles\Lighting.fx. The compilation errors were: 
+
+
+[15:14:11] Unable to create effect E:\Code\Projects\Gas\GasDemo\bin\Release\FXFiles\Lighting.fx. The compilation errors were: 
+
+
+[15:14:11] Unable to create effect E:\Code\Projects\Gas\GasDemo\bin\Release\FXFiles\Lighting.fx. The compilation errors were: 
+
+
+[15:14:11] Unable to create effect E:\Code\Projects\Gas\GasDemo\bin\Release\FXFiles\Water.fx. The compilation errors were: 
+
+

@@ -1,0 +1,16 @@
+bin\Debug\NormalMapping.dll
+bin\Debug\NormalMapping.pdb
+bin\Debug\Gas.dll
+bin\Debug\Gas.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\NormalMapping.dll
+obj\Debug\NormalMapping.pdb
+bin\Debug\Gas.xml
+obj\Release\ResolveAssemblyReference.cache
+bin\Release\NormalMapping.dll
+bin\Release\NormalMapping.pdb
+bin\Release\Gas.dll
+bin\Release\Gas.pdb
+bin\Release\Gas.xml
+obj\Release\NormalMapping.dll
+obj\Release\NormalMapping.pdb

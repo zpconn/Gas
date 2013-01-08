@@ -1,0 +1,20 @@
+﻿
+/// Session started at: 10/13/2012 3:11:41 PM
+/// GasDemo v1.0.0.0
+
+[15:11:41] Unable to create effect E:\Code\Projects\Gas\GasDemo\bin\Release\FXFiles\Lighting.fx. The compilation errors were: 
+
+
+[15:11:42] Unable to create effect E:\Code\Projects\Gas\GasDemo\bin\Release\FXFiles\Lighting.fx. The compilation errors were: 
+
+
+
+/// Session started at: 10/13/2012 3:13:48 PM
+/// GasDemo v1.0.0.0
+
+[15:13:48] Unable to create effect E:\Code\Projects\Gas\GasDemo\bin\Release\FXFiles\Lighting.fx. The compilation errors were: 
+
+
+[15:13:48] Unable to create effect E:\Code\Projects\Gas\GasDemo\bin\Release\FXFiles\Lighting.fx. The compilation errors were: 
+
+

@@ -1,0 +1,4 @@
+<Material>
+	<Texture Index="0" Filename="Textures\\roughWallDiffuseMap.jpg" />
+	<VisualEffect>textureMapping</VisualEffect>
+</Material>

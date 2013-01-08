@@ -1,0 +1,17 @@
+bin\Debug\Gas.dll
+bin\Debug\Gas.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Gas.Graphics.GraphicsForm.resources
+obj\Debug\Gas.csproj.GenerateResource.Cache
+obj\Debug\Gas.dll
+obj\Debug\Gas.pdb
+obj\Debug\Gas.Helpers.BigScreenMessage.resources
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\Gas.Graphics.GraphicsForm.resources
+obj\Release\Gas.Helpers.BigScreenMessage.resources
+obj\Release\Gas.csproj.GenerateResource.Cache
+bin\Release\Gas.dll
+bin\Release\Gas.pdb
+obj\Release\Gas.dll
+obj\Release\Gas.pdb
+bin\Release\Gas.XML

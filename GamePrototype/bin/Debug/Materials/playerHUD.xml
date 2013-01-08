@@ -1,0 +1,4 @@
+<Material>
+	<Texture Index="0" Filename="Textures\\playerHUD.png" />
+	<VisualEffect>textureMapping</VisualEffect>
+</Material>

@@ -1,0 +1,12 @@
+// System settings
+Windowed: True
+DesiredWidth: 1024
+DesiredHeight: 768
+WindowTitle: Gas Demo | By Zach Conn
+UseBloom: True
+
+// Bloom parameters
+BloomScale: 1.5
+Blur: 3
+BrightPassThreshold: 0.8 // bob
+                         // bob

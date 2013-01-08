@@ -1,0 +1,14 @@
+obj\Release\ResolveAssemblyReference.cache
+bin\Release\ColoredTextured.dll
+bin\Release\ColoredTextured.pdb
+bin\Release\Gas.dll
+bin\Release\Gas.pdb
+obj\Release\ColoredTextured.dll
+obj\Release\ColoredTextured.pdb
+bin\Debug\ColoredTextured.dll
+bin\Debug\ColoredTextured.pdb
+bin\Debug\Gas.dll
+bin\Debug\Gas.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\ColoredTextured.dll
+obj\Debug\ColoredTextured.pdb

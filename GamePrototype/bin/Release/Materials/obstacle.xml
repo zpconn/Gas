@@ -1,0 +1,4 @@
+<Material>
+	<Texture Index="0" Filename="Textures\\metal.png" />
+	<VisualEffect>lighting</VisualEffect>
+</Material>

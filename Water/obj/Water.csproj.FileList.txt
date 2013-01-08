@@ -1,0 +1,16 @@
+bin\Debug\Water.dll
+bin\Debug\Water.pdb
+bin\Debug\Gas.dll
+bin\Debug\Gas.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Water.dll
+obj\Debug\Water.pdb
+bin\Debug\Gas.xml
+obj\Release\ResolveAssemblyReference.cache
+bin\Release\Water.dll
+bin\Release\Water.pdb
+bin\Release\Gas.dll
+bin\Release\Gas.pdb
+bin\Release\Gas.xml
+obj\Release\Water.dll
+obj\Release\Water.pdb

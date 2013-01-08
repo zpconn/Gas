@@ -1,0 +1,4 @@
+<Material>
+	<Texture Index="0" Filename="Textures\\cursor.png" />
+	<VisualEffect>textureMapping</VisualEffect>
+</Material>

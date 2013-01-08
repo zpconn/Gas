@@ -1,0 +1,48 @@
+// System settings
+
+Windowed: True
+DesiredWidth: 1280
+DesiredHeight: 1024
+WindowTitle: D U E L
+ShowFPS: True
+MainMenuFont: Estrangelo Edessa
+
+// Game settings
+
+ArenaWidth: 1500
+ArenaHeight: 1500
+NumObstacles: 4
+ObstacleRadius: 110
+ObstacleYOffset: 120
+ProjectileLifetime: 2
+ProjectileSpeed: 550
+ProjectileDamage: 3
+ProjectileFireInterval: 0.3
+
+// Relative: the crosshair moves with the camera
+// Absolute: the crosshair does not move with the camera
+AimMode: Relative
+
+// Physics settings
+
+FrictionalCoefficient: 15350
+RobotMoveForceMag: 50000
+RobotMass: 50.0
+CoefficientOfRestitution: 0.2
+PhysicsTimeStep: 0.03 // 30Hz
+
+// AI Settings
+
+TargetingPrecision: 100 // The number of refinements iteratively applied to the original
+                       // impact time estimate. This should be roughly proportional to
+                       // the distances that projectiles are being fired. So the larger is
+                       // the arena, the larger should be this value.
+
+// Graphics settings
+
+UseBloom: True
+Shadows: True
+BloomBlur: 3.0 // Visual blur is inversely proportional to this value
+BloomScale: 5.0
+BloomBrightPassThreshold: 0.1 // Should be in range [0,1].
+ShadowBlur: 3 // Visual blur is inversely proportional to this value

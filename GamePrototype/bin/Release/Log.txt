@@ -1,0 +1,9 @@
+﻿
+/// Session started at: 10/13/2012 3:10:19 PM
+/// GamePrototype v1.0.0.0
+
+[15:10:19] Failed to initialize Direct3D. Exception text: Unable to create the Direct3D device.
+-2146232832 (Unknown)
+   at Gas.Graphics.Renderer.InitializeDirect3D(Boolean windowed, Control renderTarget, Int32 desiredWidth, Int32 desiredHeight) in E:\Code\Projects\Gas\Gas\Graphics\Renderer.cs:line 874
+   at Gas.Graphics.Renderer..ctor(Boolean windowed, Control renderTarget, Int32 desiredWidth, Int32 desiredHeight) in E:\Code\Projects\Gas\Gas\Graphics\Renderer.cs:line 370
+[15:10:19] Unable to initialize the renderer.
